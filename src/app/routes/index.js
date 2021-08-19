@@ -1,0 +1,10 @@
+export const LANDING = '/';
+export const HOME = '/home';
+export const PROJECTS = '/projects';
+/* export const PROJECT_DETAILS = '/projects/:id'; */
+export const PROJECT_DETAILS = '/project_detail';
+export const POSTS = '/posts';
+export const POST_DETAILS = '/posts/:id';
+export const AUTH_SIGN_IN = '/auth/sigin';
+export const AUTH_SIGN_OUT = '/auth/signout';
+export const FOUROFOUR = '/404';
