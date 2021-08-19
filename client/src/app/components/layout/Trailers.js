@@ -1,6 +1,8 @@
 import React from 'react';
 import useFetch from '../../hooks/useFetch';
 import { Loading, Error } from '../handling';
+import { Link } from 'react-router-dom';
+import * as Routes from '../../routes';
 
 
 const API_URL_trending = 'https://api.themoviedb.org/3/trending/all/day?api_key=2f5b9ef34b8e55a476b82fbd9a6367e1'
@@ -23,9 +25,9 @@ const Trailers = () => {
             { error ? <Error>{error}</Error> : 
             isLoading || !data ? 
             <Loading/> :
-            <ul>{data.results.map((d, i) => <li key={d.id}>{
+            <ul>{data.results.map((d, i) => <Link to={Routes.PROJECT_DETAILS}><li key={d.id}>{
                 d.id
-                }</li>)}</ul>
+                }</li></Link>)}</ul>
             }
         </div>
     )

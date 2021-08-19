@@ -1,6 +1,5 @@
 import { Footer, Header } from '../components/layout';
 import { SearchResults } from '../components/results';
-/* import { FilterableResults } from '../components/results'; */
 import styled from './BaseLayout.module.scss';
 
 

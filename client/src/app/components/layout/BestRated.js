@@ -1,6 +1,8 @@
 import React from 'react';
 import useFetch from '../../hooks/useFetch';
 import { Loading, Error } from '../handling';
+import { Link } from 'react-router-dom';
+import * as Routes from '../../routes';
 
 
 
@@ -19,14 +21,14 @@ const BestRated = ({filter}) => {
                 moviesError ? <Error>{moviesError}</Error> :
                 moviesLoading || !movies ? 
                     <Loading/> :
-                    <ul>{movies.results.map((d, i) => filter ? (d.genre_ids.includes(parseInt(filter)) && <li key={d.id}>{d.title || d.name}</li>) : <li key={d.id}>{d.title || d.name}</li>)}</ul>
+                    <ul>{movies.results.map((d, i) => filter ? (d.genre_ids.includes(parseInt(filter)) && <Link to={Routes.PROJECT_DETAILS}><li key={d.id}>{d.title || d.name}</li></Link>) : <Link to={Routes.PROJECT_DETAILS}><li key={d.id}>{d.title || d.name}</li></Link>)}</ul>
             }
             <h3>Series</h3>
             {
                 seriesError ? <Error>{seriesError}</Error> :
                 seriesLoading || !series ? 
                     <Loading/> :
-                    <ul>{series.results.map((d, i) => <li key={d.id}>{d.title || d.name}</li>)}</ul>
+                    <ul>{series.results.map((d, i) =><Link to={Routes.PROJECT_DETAILS}><li key={d.id}>{d.title || d.name}</li></Link>)}</ul>
             }
         </div>
     )

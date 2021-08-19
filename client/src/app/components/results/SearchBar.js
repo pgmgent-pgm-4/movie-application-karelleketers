@@ -18,9 +18,10 @@ const SearchBar = ({searchText, onSearchTextChange, onEnterPressed}) => {
     return (
         <div className="search-bar">
             <form>
-                <label>search 
-                    <input type="text" placeholder="Search movies and series..." value={searchText} onChange={handleTextChange} onKeyPress={handleEnterKeyPressed}/>
+                <label htmlFor="search-frm">
+                    search 
                 </label>
+                <input id="search-frm" type="text" placeholder="Search movies and series..." value={searchText} onChange={handleTextChange} onKeyPress={handleEnterKeyPressed}/>
             </form>
         </div>
     )
